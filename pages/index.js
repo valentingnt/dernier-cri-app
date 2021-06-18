@@ -20,7 +20,7 @@ const Home = ({ data }) => {
       <ul>
         {articles.map((article, index) => {
           return (
-            <Link href={/articles/ + encodeURIComponent(article.title)} key={index}>
+            <Link href={'/articles/' + encodeURIComponent(article.title)} key={index}>
               <a>
                 <h1>
                   <li>{article.title}</li>
