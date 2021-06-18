@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
 import MainLayout from "../layout/MainLayout";
 import styles from "../styles/Home.module.css";
+import Link from 'next/link'
 
 const Home = ({ data }) => {
-
-  let articles = data.articles
+  let articles = data.articles;
   console.log(data);
 
   return (
@@ -18,21 +19,30 @@ const Home = ({ data }) => {
 
       <ul>
         {articles.map((article, index) => {
-          return <li key={index}> {article.title}</li>;
+          return (
+            <Link href={/articles/ + article.title} key={index}>
+              <a>
+                <h1>
+                  <li>{article.title}</li>
+                </h1>
+                <h2>{article.publishedAt}</h2>
+              </a>
+            </Link>
+          );
         })}
       </ul>
     </MainLayout>
   );
 };
 
-
-export const getServerSideProps = async ({}) => {
+export const getStaticProps = async ({}) => {
   let apiKey = process.env.API_KEY;
 
   const url =
     "https://newsapi.org/v2/everything?" +
-    "qInTitle=+tesla&" +
-    "from=2021-06-16&" +
+    "qInTitle=+fashion&" +
+    "language=en&" +
+    "from=2021-06-01&" +
     "sortBy=popularity&" +
     `apiKey=${apiKey}`;
 
