@@ -42,7 +42,7 @@ export const getStaticProps = async ({}) => {
     "https://newsapi.org/v2/everything?" +
     "qInTitle=+fashion&" +
     "language=en&" +
-    "from=2021-06-01&" +
+    "from=2021-06-18&" +
     "sortBy=popularity&" +
     `apiKey=${apiKey}`;
 
