@@ -5,7 +5,7 @@ import MainLayout from "../layout/MainLayout";
 import styles from "../styles/Home.module.css";
 import Link from 'next/link'
 
-const Home = ({ data }) => {
+const Home = ( data ) => {
   let articles = data.articles;
   console.log(data);
 
@@ -20,7 +20,7 @@ const Home = ({ data }) => {
       <ul>
         {articles.map((article, index) => {
           return (
-            <Link href={'/articles/' + encodeURIComponent(article.title)} key={index}>
+            <Link href={'/articles/' + article.id} key={index}>
               <a>
                 <h1>
                   <li>{article.title}</li>
@@ -35,7 +35,7 @@ const Home = ({ data }) => {
   );
 };
 
-export const getStaticProps = async ({}) => {
+export const getServerSideProps = async () => {
   let apiKey = process.env.API_KEY;
 
   const url =
@@ -43,11 +43,15 @@ export const getStaticProps = async ({}) => {
     "qInTitle=+fashion&" +
     "language=en&" +
     "from=2021-06-18&" +
-    "sortBy=popularity&" +
+    "sortBy=relevancy&" +
     `apiKey=${apiKey}`;
 
   const res = await fetch(url);
   const data = await res.json();
+
+  data.articles.map((article, index) => {
+    article.id = index;
+  });
 
   if (!data) {
     return {
@@ -55,7 +59,7 @@ export const getStaticProps = async ({}) => {
     };
   } else
     return {
-      props: { data },
+      props: data,
     };
 };
 
