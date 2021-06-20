@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
-import MainLayout from "../layout/MainLayout";
+import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import styles from "../styles/Home.module.css";
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ const Home = ( data ) => {
   console.log(data);
 
   return (
-    <MainLayout className={styles.container}>
+    <HomeLayout className={styles.container}>
       <Head>
         <title>Dernier Cri News App</title>
         <meta name="Application news pour Dernier Cri" />
@@ -25,13 +25,12 @@ const Home = ( data ) => {
                 <h1>
                   <li>{article.title}</li>
                 </h1>
-                <h2>{article.publishedAt}</h2>
               </a>
             </Link>
           );
         })}
       </ul>
-    </MainLayout>
+    </HomeLayout>
   );
 };
 

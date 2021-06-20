@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 // export const getStaticPaths = async () => {
 
@@ -66,19 +67,17 @@ const details = (data) => {
 
   let article = data.articles.map((article, index) => {
     if (idURL === article.id) {
-      return article ;
+      return article;
     }
   });
 
-  let article2 = article[idURL]
-
-  console.log(article2);
-
+  article = article[idURL];
   return (
     <div>
-      <h1>Details page</h1>
-      <h2>TITRE : {article2.title}</h2>
-      <p>{article2.content}</p>
+      <h1>{article.title}</h1>
+      <p>{article.content}</p>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={article.urlToImage} alt="Image d'article" />
       <Link href={"/"}>
         <a>
           <p>Go back home</p>
