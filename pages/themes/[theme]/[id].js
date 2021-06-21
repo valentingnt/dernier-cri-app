@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const getServerSideProps = async (context) => {
-  let params = context.params.theme 
+  let params = context.params.theme
+
+  console.log(params);
 
   let apiKey = process.env.API_KEY;
 

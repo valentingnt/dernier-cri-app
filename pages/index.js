@@ -26,7 +26,7 @@ const Home = (data) => {
 
         <div className={styles.dailyArticle}>
           <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
-          <Link href={"/articles/" + articles[0].id}>
+          <Link href={"/themes/fashion/" + articles[0].id}>
             <a>
               <h2 className={styles.dailyArticleTitle}>{articles[0].title}</h2>
             </a>
@@ -54,7 +54,7 @@ const Home = (data) => {
             if (article.id > 0) {
               return (
                 <>
-                  <Link href={"/articles/" + article.id} key={index}>
+                  <Link href={"/themes/fashion/" + article.id} key={index}>
                     <a>
                       <img
                         className={styles.articleImage}
