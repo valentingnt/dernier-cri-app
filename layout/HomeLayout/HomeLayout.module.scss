@@ -1,17 +1,22 @@
 .mainTitle {
   font-size: 25vw;
-  font-family: "Austragen";
+  font-family: "Sole Title";
+  letter-spacing: -7px;
   margin: 50px 0;
   text-align: center;
-  border-top: solid 4vw #2b2b2b;
-  border-bottom: solid 4vw #2b2b2b;
+  border-top: solid 15px #2b2b2b;
+  border-bottom: solid 15px #2b2b2b;
 }
 
 @media screen and (min-width: 930px) {
   .mainTitle {
     font-size: 15vw;
-    border-top: solid 2.5vw #2b2b2b;
-    border-bottom: solid 2.5vw #2b2b2b;
+  }
+}
+
+@media screen and (min-width: 1960px) {
+  .mainTitle {
+    font-size: 300px;
   }
 }
 

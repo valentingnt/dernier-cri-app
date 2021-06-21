@@ -28,17 +28,16 @@
   position: sticky;
   top: 0;
 
-  h2{
-    font-family: "Sole";
-  }
-
-  p{
-    font-family: "Sole";
-  }
+  // h2{
+  //   font-family: "Sole Subhead";
+  // }
 }
 
 .articleList {
   grid-column: 3;
   border-top: solid 2px #2b2b2b;
 
+  img{
+    width: 100%;
+  }
 }

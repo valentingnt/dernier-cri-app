@@ -3,6 +3,7 @@ import Head from "next/head";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
+// import { useRouter } from "next/router";
 
 const Home = (data) => {
   let articles = data.articles;
@@ -25,17 +26,22 @@ const Home = (data) => {
         </div>
 
         <div className={styles.dailyArticle}>
-          <h3 className={styles.dailyArticleSubtitle}>Article du jour</h3>
+          <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
           <Link href={"/articles/" + articles[0].id}>
             <a>
               <h2 className={styles.dailyArticleTitle}>{articles[0].title}</h2>
             </a>
           </Link>
-          <p className={styles.dailyArticleDescription}>{articles[0].title}</p>
+          <p className={styles.dailyArticleDescription}>
+            <i>{articles[0].description}</i>
+          </p>
+          <p className={styles.dailyArticleContent}>{articles[0].content}</p>
           <p className={styles.dailyArticleLink}>
             <Link href={articles[0].url}>
               <a>
-                <i>Lien vers l'article</i>
+                <u>
+                  <i>Lien vers l'article</i>
+                </u>
               </a>
             </Link>
           </p>
@@ -44,17 +50,29 @@ const Home = (data) => {
         <div className={styles.articleList}>
           <ul>
             {articles.map((article, index) => {
-              return (
-                <>
-                  <Link href={"/articles/" + article.id} key={index}>
-                    <a>
-                      <h2>{article.title}</h2>
-                    </a>
-                  </Link>
+              let dateBefore = article.publishedAt
+              let date = dateBefore.slice(0, 10)
 
-                  <hr />
-                </>
-              );
+              console.log(date);
+              if (article.id > 0) {
+                return (
+                  <>
+                    <Link href={"/articles/" + article.id} key={index}>
+                      <a>
+                        <img
+                          className={styles.articleImage}
+                          src={article.urlToImage}
+                          alt="Image de l'article le plus récent"
+                        />
+                        <p>{date}</p>
+                        <h2>{article.title}</h2>
+                      </a>
+                    </Link>
+
+                    <hr />
+                  </>
+                );
+              }
             })}
           </ul>
         </div>
@@ -65,13 +83,18 @@ const Home = (data) => {
 
 export const getServerSideProps = async () => {
   let apiKey = process.env.API_KEY;
+  // const router = useRouter();
+
+  // let theme = router.query
+
+  // console.log(theme);
 
   const url =
     "https://newsapi.org/v2/everything?" +
-    "qInTitle=+fashion&" +
+    `qInTitle=+fashion&` +
     "language=en&" +
     "from=2021-06-18&" +
-    "sortBy=relevancy&" +
+    "sortBy=publishedAt&" +
     `apiKey=${apiKey}`;
 
   const res = await fetch(url);
