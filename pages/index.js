@@ -47,14 +47,14 @@ const Home = (data) => {
         </div>
 
         <div className={styles.articleList}>
-          {articles.map((article, index) => {
+          {articles.map((article) => {
             let dateBefore = article.publishedAt;
             let date = dateBefore.slice(0, 10);
 
             if (article.id > 0) {
               return (
-                <>
-                  <Link href={"/themes/fashion/" + article.id} key={index}>
+                <div key={article.id}>
+                  <Link href={"/themes/fashion/" + article.id}>
                     <a>
                       <img
                         className={styles.articleImage}
@@ -67,7 +67,7 @@ const Home = (data) => {
                     </a>
                   </Link>
                   <hr />
-                </>
+                </div>
               );
             }
           })}

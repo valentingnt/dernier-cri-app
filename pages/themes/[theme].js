@@ -3,7 +3,7 @@
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "./[theme].module.css";
+import styles from "./[theme].module.scss";
 import { useRouter } from "next/router";
 
 const Theme = (data) => {
