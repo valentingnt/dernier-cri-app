@@ -1,13 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect } from "react";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
-import styles from "../styles/Home.module.css";
-import Link from 'next/link'
+import styles from "../styles/Home.module.scss";
+import Link from "next/link";
 
-const Home = ( data ) => {
+const Home = (data) => {
   let articles = data.articles;
-  console.log(data);
+  console.log(articles);
 
   return (
     <HomeLayout className={styles.container}>
@@ -17,19 +16,49 @@ const Home = ( data ) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ul>
-        {articles.map((article, index) => {
-          return (
-            <Link href={'/articles/' + article.id} key={index}>
+      <div className={styles.mainGrid}>
+        <div className={styles.dailyImg}>
+          <img
+            src={articles[0].urlToImage}
+            alt="Image de l'article le plus récent"
+          />
+        </div>
+
+        <div className={styles.dailyArticle}>
+          <h3 className={styles.dailyArticleSubtitle}>Article du jour</h3>
+          <Link href={"/articles/" + articles[0].id}>
+            <a>
+              <h2 className={styles.dailyArticleTitle}>{articles[0].title}</h2>
+            </a>
+          </Link>
+          <p className={styles.dailyArticleDescription}>{articles[0].title}</p>
+          <p className={styles.dailyArticleLink}>
+            <Link href={articles[0].url}>
               <a>
-                <h1>
-                  <li>{article.title}</li>
-                </h1>
+                <i>Lien vers l'article</i>
               </a>
             </Link>
-          );
-        })}
-      </ul>
+          </p>
+        </div>
+
+        <div className={styles.articleList}>
+          <ul>
+            {articles.map((article, index) => {
+              return (
+                <>
+                  <Link href={"/articles/" + article.id} key={index}>
+                    <a>
+                      <h2>{article.title}</h2>
+                    </a>
+                  </Link>
+
+                  <hr />
+                </>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     </HomeLayout>
   );
 };
