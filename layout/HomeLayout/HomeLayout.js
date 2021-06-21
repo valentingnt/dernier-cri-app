@@ -6,7 +6,7 @@ const HomeLayout = ({ children }) => {
     <main className={styles.mainSection}>
       <Menu />
 
-      <h1 className={styles.mainTitle}>trend.</h1>
+      <h1 className={styles.mainTitle}>TREND.</h1>
 
       {children}
     </main>

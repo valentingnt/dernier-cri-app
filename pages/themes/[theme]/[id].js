@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styles from './[id].module.scss'
 
 export const getServerSideProps = async (context) => {
-  let params = context.params.theme
+  let params = context.params.theme;
 
   console.log(params);
 
@@ -50,7 +51,14 @@ const details = (data) => {
     <div>
       <h1>{article.title}</h1>
       <p>{article.content}</p>
-      <img src={article.urlToImage} alt="Image d'article" />
+      <img
+        src={
+          article.urlToImage == null
+            ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+            : article.urlToImage
+        }
+        alt="Image d'article"
+      />
       <Link href={"/"}>
         <a>
           <p>Go back home</p>

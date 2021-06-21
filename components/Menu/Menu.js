@@ -14,21 +14,62 @@ const Menu = () => {
 
   return (
     <menu>
-      <Link href="/themes/fashion">
-        <a>
-          <p>Fashion</p>
-        </a>
-      </Link>
-      <Link href="/themes/technology">
-        <a>
-          <p>Technology</p>
-        </a>
-      </Link>
-      <Link href="/themes/environment">
-        <a>
-          <p>Environment</p>
-        </a>
-      </Link>
+      <div>
+        <Link href="/themes/fashion">
+          <a>
+            <p>Fashion</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/technology">
+          <a>
+            <p>Technology</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/environment">
+          <a>
+            <p>Environment</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/politics">
+          <a>
+            <p>Politics</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/finance">
+          <a>
+            <p>Finance</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/society">
+          <a>
+            <p>Society</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/sport">
+          <a>
+            <p>Sport</p>
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/themes/art%20culture">
+          <a>
+            <p>Art & Culture</p>
+          </a>
+        </Link>
+      </div>
 
       <div>
         <input type="text" id="search" />

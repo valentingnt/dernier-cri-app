@@ -13,7 +13,6 @@ const Theme = (data) => {
   const router = useRouter();
   let themeURL = router.query.theme;
 
-
   return (
     <HomeLayout className={styles.container}>
       <Head>
@@ -25,7 +24,11 @@ const Theme = (data) => {
       <div className={styles.mainGrid}>
         <div className={styles.dailyImg}>
           <img
-            src={articles[0].urlToImage}
+            src={
+              articles[0].urlToImage == null
+                ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                : articles[0].urlToImage
+            }
             alt="Image de l'article le plus récent"
           />
         </div>
@@ -59,12 +62,16 @@ const Theme = (data) => {
 
             if (article.id > 0) {
               return (
-                <>
-                  <Link href={themeURL + "/" + articles[0].id.toString()} key={index}>
+                <div key={article.id}>
+                  <Link href={themeURL + "/" + articles[0].id.toString()}>
                     <a>
                       <img
                         className={styles.articleImage}
-                        src={article.urlToImage}
+                        src={
+                          article.urlToImage == null
+                            ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                            : article.urlToImage
+                        }
                         alt="Image de l'article le plus récent"
                       />
                       <p>{date}</p>
@@ -73,7 +80,7 @@ const Theme = (data) => {
                     </a>
                   </Link>
                   <hr />
-                </>
+                </div>
               );
             }
           })}

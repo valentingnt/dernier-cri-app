@@ -19,7 +19,11 @@ const Home = (data) => {
       <div className={styles.mainGrid}>
         <div className={styles.dailyImg}>
           <img
-            src={articles[0].urlToImage}
+            src={
+              articles[0].urlToImage == null
+                ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                : article.urlToImage
+            }
             alt="Image de l'article le plus récent"
           />
         </div>
@@ -58,7 +62,11 @@ const Home = (data) => {
                     <a>
                       <img
                         className={styles.articleImage}
-                        src={article.urlToImage}
+                        src={
+                          article.urlToImage == null
+                            ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                            : article.urlToImage
+                        }
                         alt="Image de l'article le plus récent"
                       />
                       <p>{date}</p>
@@ -79,11 +87,6 @@ const Home = (data) => {
 
 export const getServerSideProps = async () => {
   let apiKey = process.env.API_KEY;
-  // const router = useRouter();
-
-  // let theme = router.query
-
-  // console.log(theme);
 
   const url =
     "https://newsapi.org/v2/everything?" +
