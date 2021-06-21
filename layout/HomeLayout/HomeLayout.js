@@ -10,7 +10,7 @@ const HomeLayout = ({ children }) => {
         as="font"
         crossOrigin=""
       />
-      {/* <Menu /> */}
+      <Menu />
 
       <h1 className={styles.mainTitle}>trend.</h1>
 

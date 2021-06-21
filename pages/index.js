@@ -3,7 +3,6 @@ import Head from "next/head";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
-// import { useRouter } from "next/router";
 
 const Home = (data) => {
   let articles = data.articles;
@@ -48,33 +47,30 @@ const Home = (data) => {
         </div>
 
         <div className={styles.articleList}>
-          <ul>
-            {articles.map((article, index) => {
-              let dateBefore = article.publishedAt
-              let date = dateBefore.slice(0, 10)
+          {articles.map((article, index) => {
+            let dateBefore = article.publishedAt;
+            let date = dateBefore.slice(0, 10);
 
-              console.log(date);
-              if (article.id > 0) {
-                return (
-                  <>
-                    <Link href={"/articles/" + article.id} key={index}>
-                      <a>
-                        <img
-                          className={styles.articleImage}
-                          src={article.urlToImage}
-                          alt="Image de l'article le plus récent"
-                        />
-                        <p>{date}</p>
-                        <h2>{article.title}</h2>
-                      </a>
-                    </Link>
-
-                    <hr />
-                  </>
-                );
-              }
-            })}
-          </ul>
+            if (article.id > 0) {
+              return (
+                <>
+                  <Link href={"/articles/" + article.id} key={index}>
+                    <a>
+                      <img
+                        className={styles.articleImage}
+                        src={article.urlToImage}
+                        alt="Image de l'article le plus récent"
+                      />
+                      <p>{date}</p>
+                      <h2>{article.title}</h2>
+                      <p>{article.description}</p>
+                    </a>
+                  </Link>
+                  <hr />
+                </>
+              );
+            }
+          })}
         </div>
       </div>
     </HomeLayout>

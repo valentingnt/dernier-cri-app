@@ -4,9 +4,19 @@ import styles from "./Menu.module.scss"
 const Menu = () => {
   return (
     <menu>
-      <Link href="#">
+      <Link href="/themes/fashion">
         <a>
-          <p>A propos</p>
+          <p>Fashion</p>
+        </a>
+      </Link>
+      <Link href="/themes/technology">
+        <a>
+          <p>Technology</p>
+        </a>
+      </Link>
+      <Link href="/themes/environment">
+        <a>
+          <p>Environment</p>
         </a>
       </Link>
     </menu>

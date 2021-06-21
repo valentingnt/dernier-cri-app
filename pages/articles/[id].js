@@ -2,15 +2,17 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+  let params = context.params.theme 
+
   let apiKey = process.env.API_KEY;
 
   const url =
     "https://newsapi.org/v2/everything?" +
-    "qInTitle=+fashion&" +
+    `qInTitle=+${params}&` +
     "language=en&" +
     "from=2021-06-18&" +
-    "sortBy=relevancy&" +
+    "sortBy=publishedAt&" +
     `apiKey=${apiKey}`;
 
   const res = await fetch(url);
