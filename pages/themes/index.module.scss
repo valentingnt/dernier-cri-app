@@ -1,0 +1,32 @@
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  // gap: 0 20px;
+}
+
+.dailyArticle {
+  padding: 20px;
+  grid-column: 1;
+  border-top: solid 2px #2b2b2b;
+  border-right: solid 2px #2b2b2b;
+  height: 100%;
+}
+
+.stickyArticle{
+  position: sticky;
+  top: 70px;
+
+  img{
+    max-height: 20vh;
+  }
+}
+
+.articleList {
+  padding: 0 20px;
+  grid-column: 2;
+  border-top: solid 2px #2b2b2b;
+
+  img {
+    width: 100%;
+  }
+}

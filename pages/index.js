@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
-import styles from "../styles/Home.module.scss";
+import styles from "./themes/index.module.scss";
 import Link from "next/link";
 
 const Home = (data) => {
@@ -17,37 +18,38 @@ const Home = (data) => {
       </Head>
 
       <div className={styles.mainGrid}>
-        <div className={styles.dailyImg}>
-          <img
-            src={
-              articles[0].urlToImage == null
-                ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
-                : articles[0].urlToImage
-            }
-            alt="Image de l'article le plus récent"
-          />
-        </div>
-
         <div className={styles.dailyArticle}>
-          <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
-          <Link href={"/themes/fashion/" + articles[0].id}>
-            <a>
-              <h2 className={styles.dailyArticleTitle}>{articles[0].title}</h2>
-            </a>
-          </Link>
-          <p className={styles.dailyArticleDescription}>
-            <i>{articles[0].description}</i>
-          </p>
-          <p className={styles.dailyArticleContent}>{articles[0].content}</p>
-          <p className={styles.dailyArticleLink}>
-            <Link href={articles[0].url}>
+          <div className={styles.stickyArticle}>
+            <img
+              src={
+                articles[0].urlToImage == null
+                  ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                  : articles[0].urlToImage
+              }
+              alt="Image de l'article le plus récent"
+            />
+            <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
+            <Link href={"/themes/fashion/" + articles[0].id}>
               <a>
-                <u>
-                  <i>Lien vers l'article</i>
-                </u>
+                <h2 className={styles.dailyArticleTitle}>
+                  {articles[0].title}
+                </h2>
               </a>
             </Link>
-          </p>
+            <p className={styles.dailyArticleDescription}>
+              <i>{articles[0].description}</i>
+            </p>
+            <p className={styles.dailyArticleContent}>{articles[0].content}</p>
+            <p className={styles.dailyArticleLink}>
+              <Link href={articles[0].url}>
+                <a>
+                  <u>
+                    <i>Lien vers l'article</i>
+                  </u>
+                </a>
+              </Link>
+            </p>
+          </div>
         </div>
 
         <div className={styles.articleList}>
