@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from './[id].module.scss'
+import styles from "./[id].module.scss";
 
 export const getServerSideProps = async (context) => {
   let params = context.params.theme;
@@ -35,7 +35,7 @@ export const getServerSideProps = async (context) => {
     };
 };
 
-const details = (data) => {
+const Details = (data) => {
   const router = useRouter();
   let idURLstring = router.query.id;
   let idURL = parseInt(idURLstring);
@@ -47,25 +47,50 @@ const details = (data) => {
   });
 
   article = article[idURL];
+
+  let dateBefore = article.publishedAt;
+  let date = dateBefore.slice(0, 10);
+
   return (
-    <div>
-      <h1>{article.title}</h1>
-      <p>{article.content}</p>
-      <img
-        src={
-          article.urlToImage == null
-            ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
-            : article.urlToImage
-        }
-        alt="Image d'article"
-      />
-      <Link href={"/"}>
-        <a>
-          <p>Go back home</p>
-        </a>
-      </Link>
-    </div>
+    <main className={styles.container}>
+      <div className={styles.main}>
+        <h1>{article.title}</h1>
+
+        <img
+          src={
+            article.urlToImage == null
+              ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+              : article.urlToImage
+          }
+          alt="Image d'article"
+        />
+
+        <div className={styles.articleContent}>
+          <p>{article.content}</p>
+          <Link href={article.url}>
+            <a>
+              <u>
+                <i>Link to full article</i>
+              </u>
+            </a>
+          </Link>
+        </div>
+
+
+        <p>From : {article.source.name}</p>
+
+        <p className={styles.publishedAt}>Published at : {date}</p>
+
+        <Link href={"/"}>
+          <a>
+            <p>
+              <i><u>Go back</u></i>
+            </p>
+          </a>
+        </Link>
+      </div>
+    </main>
   );
 };
 
-export default details;
+export default Details;

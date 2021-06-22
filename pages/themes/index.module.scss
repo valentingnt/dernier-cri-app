@@ -1,7 +1,6 @@
 .mainGrid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  // gap: 0 20px;
 }
 
 .dailyArticle {
@@ -17,7 +16,7 @@
   top: 70px;
 
   img{
-    max-height: 20vh;
+    max-height: 50vh;
   }
 }
 
@@ -28,5 +27,11 @@
 
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: 1320px) {
+  .maingrid {
+    grid-template-columns: 1fr 2fr;
   }
 }
