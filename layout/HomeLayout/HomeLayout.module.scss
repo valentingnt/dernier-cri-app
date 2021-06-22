@@ -1,17 +1,23 @@
 .mainTitle {
-  font-size: 18vw;
+  font-size: 15vw;
   font-family: "Sole Title";
-    letter-spacing: 10px;
-    margin: 50px 0;
+  margin: 50px 20vw;
   text-align: center;
   border-top: solid 15px #2b2b2b;
   border-bottom: solid 15px #2b2b2b;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (max-width: 930px) {
   .mainTitle {
     font-size: 15vw;
-    letter-spacing: 35px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mainTitle {
+    font-size: 12vw;
+    border-top: solid 7px #2b2b2b;
+    border-bottom: solid 7px #2b2b2b;
   }
 }
 

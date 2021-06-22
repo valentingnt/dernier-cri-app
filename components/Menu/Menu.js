@@ -16,42 +16,42 @@ const Menu = () => {
   return (
     <>
       <menu className={styles.menuGrid}>
-          <Link href="/themes/fashion">
+          <Link scroll={false} href="/themes/fashion">
             <a>
               <div><p>Fashion</p></div>
             </a>
           </Link>
-          <Link href="/themes/technology">
+          <Link scroll={false} href="/themes/technology">
             <a>
               <div><p>Technology</p></div>
             </a>
           </Link>
-          <Link href="/themes/environment">
+          <Link scroll={false} href="/themes/environment">
             <a>
               <div><p>Environment</p></div>
             </a>
           </Link>
-          <Link href="/themes/politics">
+          <Link scroll={false} href="/themes/politics">
             <a>
               <div><p>Politics</p></div>
             </a>
           </Link>
-          <Link href="/themes/finance">
+          <Link scroll={false} href="/themes/finance">
             <a>
               <div><p>Finance</p></div>
             </a>
           </Link>
-          <Link href="/themes/society">
+          <Link scroll={false} href="/themes/society">
             <a>
               <div><p>Society</p></div>
             </a>
           </Link>
-          <Link href="/themes/sport">
+          <Link scroll={false} href="/themes/sport">
             <a>
               <div><p>Sport</p></div>
             </a>
           </Link>
-          <Link href="/themes/art%20culture">
+          <Link scroll={false} href="/themes/art%20culture">
             <a>
               <div><p>Culture</p></div>
             </a>
