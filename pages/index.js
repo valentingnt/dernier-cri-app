@@ -20,14 +20,16 @@ const Home = (data) => {
       <div className={styles.mainGrid}>
         <div className={styles.dailyArticle}>
           <div className={styles.stickyArticle}>
-            <img
-              src={
-                articles[0].urlToImage == null
-                  ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
-                  : articles[0].urlToImage
-              }
-              alt="Image de l'article le plus récent"
-            />
+            <div className={styles.img}>
+              <img
+                src={
+                  articles[0].urlToImage == null
+                    ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                    : articles[0].urlToImage
+                }
+                alt="Image de l'article le plus récent"
+              />
+            </div>
             <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
             <Link href={"/themes/fashion/" + articles[0].id}>
               <a>
