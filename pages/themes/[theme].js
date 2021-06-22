@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import HomeLayout from "../../layout/HomeLayout/HomeLayout";
 import Link from "next/link";
@@ -33,7 +34,7 @@ const Theme = (data) => {
                 alt="Image de l'article le plus récent"
               />
             </div>
-            <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
+            <h3 className={styles.dailyArticleSubtitle}>Latest article</h3>
             <Link href={themeURL + "/" + articles[0].id.toString()}>
               <a>
                 <h2 className={styles.dailyArticleTitle}>{articles[0].title}</h2>
@@ -47,7 +48,7 @@ const Theme = (data) => {
               <Link href={articles[0].url}>
                 <a>
                   <u>
-                    <i>Lien vers article</i>
+                    <i>Link to article's website</i>
                   </u>
                 </a>
               </Link>

@@ -30,7 +30,7 @@ const Home = (data) => {
                 alt="Image de l'article le plus récent"
               />
             </div>
-            <h3 className={styles.dailyArticleSubtitle}>Dernier article</h3>
+            <h3 className={styles.dailyArticleSubtitle}>Latest article</h3>
             <Link href={"/themes/fashion/" + articles[0].id}>
               <a>
                 <h2 className={styles.dailyArticleTitle}>
@@ -46,7 +46,7 @@ const Home = (data) => {
               <Link href={articles[0].url}>
                 <a>
                   <u>
-                    <i>Lien vers l'article</i>
+                    <i>Link to article</i>
                   </u>
                 </a>
               </Link>

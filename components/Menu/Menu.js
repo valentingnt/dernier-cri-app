@@ -75,7 +75,7 @@ const Menu = () => {
       </menu>
       <div className={styles.searchArea}>
         <input
-          placeholder="Rechercher une actualité..."
+          placeholder="Search a news..."
           type="text"
           id="search"
           className={styles.searchBox}
