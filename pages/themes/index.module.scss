@@ -61,6 +61,10 @@
     grid-template-columns: 1fr;
   }
 
+  .stickyArticle{
+    top: auto;
+  }
+
   .dailyArticle {
     grid-row: 1;
     border: none;
@@ -73,6 +77,8 @@
     grid-row: 2;
 
     img{
+      position: sticky;
+      top: 60px;
       max-height: 150px;
       object-fit: cover;
     }

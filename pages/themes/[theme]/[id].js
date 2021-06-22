@@ -3,38 +3,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./[id].module.scss";
 
-export const getServerSideProps = async (context) => {
-  let params = context.params.theme;
-
-  console.log(params);
-
-  let apiKey = process.env.API_KEY;
-
-  const url =
-    "https://newsapi.org/v2/everything?" +
-    `qInTitle=+${params}&` +
-    "language=en&" +
-    "from=2021-06-18&" +
-    "sortBy=publishedAt&" +
-    `apiKey=${apiKey}`;
-
-  const res = await fetch(url);
-  const data = await res.json();
-
-  data.articles.map((article, index) => {
-    article.id = index;
-  });
-
-  if (!data) {
-    return {
-      props: null,
-    };
-  } else
-    return {
-      props: data,
-    };
-};
-
 const Details = (data) => {
   const router = useRouter();
   let idURLstring = router.query.id;
@@ -91,6 +59,38 @@ const Details = (data) => {
       </div>
     </main>
   );
+};
+
+export const getServerSideProps = async (context) => {
+  let params = context.params.theme;
+
+  console.log(params);
+
+  let apiKey = process.env.API_KEY;
+
+  const url =
+    "https://newsapi.org/v2/everything?" +
+    `qInTitle=+${params}&` +
+    "language=en&" +
+    "from=2021-06-18&" +
+    "sortBy=publishedAt&" +
+    `apiKey=${apiKey}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  data.articles.map((article, index) => {
+    article.id = index;
+  });
+
+  if (!data) {
+    return {
+      props: null,
+    };
+  } else
+    return {
+      props: data,
+    };
 };
 
 export default Details;
