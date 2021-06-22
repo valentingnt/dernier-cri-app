@@ -56,14 +56,14 @@ const Theme = (data) => {
         </div>
 
         <div className={styles.articleList}>
-          {articles.map((article, index) => {
+          {articles.map((article) => {
             let dateBefore = article.publishedAt;
             let date = dateBefore.slice(0, 10);
 
             if (article.id > 0) {
               return (
                 <div key={article.id}>
-                  <Link href={themeURL + "/" + articles[0].id.toString()}>
+                  <Link href={themeURL + "/" + article.id.toString()}>
                     <a>
                       <img
                         className={styles.articleImage}
