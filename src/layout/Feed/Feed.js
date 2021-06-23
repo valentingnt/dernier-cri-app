@@ -7,9 +7,9 @@ const Feed = ({ articles, theme }) => {
     return (
       <div className={styles.container}>
         <div className={styles.mainGrid}>
-          <Link href={`/${theme}/0`}>
-            <a>
-              <div className={styles.dailyArticle}>
+          <div className={styles.dailyArticle}>
+            <Link href={`/${theme}/0`}>
+              <a>
                 <div className={styles.stickyArticle}>
                   <div className={styles.img}>
                     <img
@@ -45,9 +45,9 @@ const Feed = ({ articles, theme }) => {
                     </Link>
                   </p>
                 </div>
-              </div>
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </div>
           <div className={styles.articleList}>
             {articles.map((article, index) => {
               let dateBefore = article.publishedAt;

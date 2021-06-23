@@ -13,7 +13,6 @@ const Header = () => {
           </a>
         </Link>
       </div>
-      <Menu />
     </header>
   );
 };
