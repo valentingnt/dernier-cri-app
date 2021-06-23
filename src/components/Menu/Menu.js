@@ -12,15 +12,16 @@ const Menu = () => {
       ? ""
       : router.push(`/${searched}`, undefined, { shallow: false });
   };
+  
   const menuItems = [
-    "fashion",
-    "technology",
-    "environment",
-    "politics",
-    "finance",
-    "society",
-    "sport",
-    "culture",
+    "Fashion",
+    "Technology",
+    "Environment",
+    "Politics",
+    "Finance",
+    "Society",
+    "Sport",
+    "Culture",
   ];
 
   return (

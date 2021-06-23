@@ -62,23 +62,10 @@
 
 @media (max-width: 920px) {
   .menuGrid {
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: solid 2px #2b2b2b;
-
-    div {
-      padding: 1px;
-      max-width: calc(100vw / 4);
-      border-top: none;
-    }
+    display: none;
   }
 
-  .searchBox {
-    width: 50%;
-  }
-
-  .searchBtn {
-    width: 30%;
+  .searchArea {
+    display: none;
   }
 }

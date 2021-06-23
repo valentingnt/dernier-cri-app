@@ -50,7 +50,7 @@ const Feed = ({ articles, theme }) => {
               let date = dateBefore.slice(0, 10);
               if (index > 0) {
                 return (
-                  <div key={index}>
+                  <div key={index} className={styles.oneArticle}>
                     <Link href={`/${theme}/` + index}>
                       <a>
                         <img
@@ -67,7 +67,6 @@ const Feed = ({ articles, theme }) => {
                         <p>{article.description}</p>
                       </a>
                     </Link>
-                    <hr />
                   </div>
                 );
               }

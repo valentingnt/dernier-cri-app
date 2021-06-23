@@ -13,7 +13,7 @@
 
 .stickyArticle {
   position: sticky;
-  top: 70px;
+  top: 20px;
 
   img {
     height: 200px;
@@ -32,6 +32,11 @@
   }
 }
 
+.oneArticle{
+  padding: 75px 0;
+  border-bottom: solid 2px #2b2b2b;
+}
+
 .noMatch {
   text-align: center;
   margin: 150px;
@@ -43,8 +48,6 @@
   }
 
   .stickyArticle {
-    position: sticky;
-    top: 70px;
 
     img {
       max-height: 50vh;
