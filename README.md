@@ -27,18 +27,19 @@ L'API NewsAPI était une découverte pour moi, elle possède une limite qui peut
 *_"The request didn't send any articles. Double check your research or check the API key validity."_*
 Il suffit alors de vérifier le fichier `.env` à la racine de l'application et de changer la clé par celle-ci : `2e0b8f31bf684707982801288c080e07`
 
-## Installation du projet <project_name>
+## Installation du projet <dernier-cri-app>
 
-To install <dernier-cri-app> locally, follow these steps:
+Pour installer <dernier-cri-app> localement, suivez ces étapes:
 
-1. Clone this repository.
-2. `cd` into it and then 
+1. Cloner le repository appelé <dernier-cri-app>.
+2. `cd` à l'intérieur puis : 
 
 ```
 npm install
 ```
-3. To run the server locally, run :
+3. Pour lancer le serveur localement entrez la commande :
 
 ```
 npm run dev
 ```
+4. Lancez votre navigateur, l'application est en local au `localhost:3000`
