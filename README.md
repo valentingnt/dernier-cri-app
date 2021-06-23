@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+trend.
+======
 
-## Getting Started
+# trend.
 
-First, run the development server:
+Trend est une application web developpée en Next.js à l'aide de la commande `npx create-next-app`. Trend. utilise l'API de [News API](https://newsapi.org/ "newsapi.org") afin de recupérer des articles du monde entier, et d'ainsi les trier, les rechercher ou les afficher avec le traitement de l'application Trend.
 
-```bash
-npm run dev
-# or
-yarn dev
+## Ma méthodologie
+
+Étant déjà fammilier avec le framework React.js, j'ai voulu apprendre Next.js sachant les nombreux avantages qu'il possède, je me suis dit que cela allait toujours me servir. Je me suis donc formé rapidement aux fondamentaux et ai commencé à imaginer une application qui serait utile et faisable en next.js. Je me suis renseigné sur l'api de [News API](https://newsapi.org/ "newsapi.org") que je ne connaissais pas et ais eu l'idée de créer une application recensant les derniers articles parus dans le monde entier par thématique avec possibilité de recherche de mots-clés.
+
+Avant toute chose j'ai créé un repository gitHub pour suivre mon avancée et gérer les versions.
+
+J'ai en parallèle mis l'application sur la plateforme Vercel à l'adresse [https://trend-app.vercel.app/](https://trend-app.vercel.app/), pour pouvoir tester l'application sur différents supports et vérifier les fonctionnalité en mode production.
+
+## Structure du code
+
+J'ai donc segmenté mon arborescence pour une compréhension maximale de la hiérarchie des éléments. Un dossier `src` contient les `components`, `layout`, `pages` et `template` de mon application. 
+
+J'ai décidé d'utiliser la méthode `getServerSideProps` au sein de l'application pour un rendu dynamique et un contenu qui s'actualise à chaque requête de l'utilisateur.
+
+J'ai utilisé des routes dynamiques pour afficher les détails d'un article.
+
+Plusieurs composants ont été créés afin de créer un rendu fluide tout au long de la navigation
+
+## Limitations
+
+L'API NewsAPI était une découverte pour moi, elle possède une limite qui peut poser soucis au moment de la navigation sur l'application : en "mode développeur" l'API peut renvoyer un nombre de requête limités toutes les 12h. C'est pour cela qu'il est possible que lors de la navigation l'application indique :
+*_"The request didn't send any articles. Double check your research or check the API key validity."_*
+Il suffit alors de vérifier le fichier `.env` à la racine de l'application et de changer la clé par celle-ci : `2e0b8f31bf684707982801288c080e07`
+
+## Installing <project_name>
+
+To install <project_name>, follow these steps:
+
+Linux and macOS:
+
+```
+<install_command>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Windows:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+<install_command>
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
