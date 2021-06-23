@@ -1,8 +1,6 @@
 trend.
 ======
 
-# trend.
-
 Trend est une application web developpée en Next.js à l'aide de la commande `npx create-next-app`. Trend. utilise l'API de [News API](https://newsapi.org/ "newsapi.org") afin de recupérer des articles du monde entier, et d'ainsi les trier, les rechercher ou les afficher avec le traitement de l'application Trend.
 
 ## Ma méthodologie
@@ -25,23 +23,22 @@ Plusieurs composants ont été créés afin de créer un rendu fluide tout au lo
 
 ## Limitations
 
-L'API NewsAPI était une découverte pour moi, elle possède une limite qui peut poser soucis au moment de la navigation sur l'application : en "mode développeur" l'API peut renvoyer un nombre de requête limités toutes les 12h. C'est pour cela qu'il est possible que lors de la navigation l'application indique :
+L'API NewsAPI était une découverte pour moi, elle possède une limite qui peut poser soucis au moment de la navigation sur l'application : en "mode développeur" l'API peut renvoyer un nombre de requête limité toutes les 12h. C'est pour cela qu'il est possible que lors de la navigation l'application indique :
 *_"The request didn't send any articles. Double check your research or check the API key validity."_*
 Il suffit alors de vérifier le fichier `.env` à la racine de l'application et de changer la clé par celle-ci : `2e0b8f31bf684707982801288c080e07`
 
-## Installing <project_name>
+## Installation du projet <project_name>
 
-To install <project_name>, follow these steps:
+To install <dernier-cri-app> locally, follow these steps:
 
-Linux and macOS:
-
-```
-<install_command>
-```
-
-Windows:
+1. Clone this repository.
+2. `cd` into it and then 
 
 ```
-<install_command>
+npm install
 ```
+3. To run the server locally, run :
 
+```
+npm run dev
+```
