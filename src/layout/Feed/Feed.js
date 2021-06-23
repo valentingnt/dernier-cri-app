@@ -7,43 +7,47 @@ const Feed = ({ articles, theme }) => {
     return (
       <div className={styles.container}>
         <div className={styles.mainGrid}>
-          <div className={styles.dailyArticle}>
-            <div className={styles.stickyArticle}>
-              <div className={styles.img}>
-                <img
-                  src={
-                    articles[0].urlToImage == null
-                      ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
-                      : articles[0].urlToImage
-                  }
-                  alt="Image de l'article le plus récent"
-                />
-              </div>
-              <h3 className={styles.dailyArticleSubtitle}>Latest article</h3>
-              <Link href={`/${theme}/0`}>
-                <a>
+          <Link href={`/${theme}/0`}>
+            <a>
+              <div className={styles.dailyArticle}>
+                <div className={styles.stickyArticle}>
+                  <div className={styles.img}>
+                    <img
+                      src={
+                        articles[0].urlToImage == null
+                          ? "https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+                          : articles[0].urlToImage
+                      }
+                      alt="Image de l'article le plus récent"
+                    />
+                  </div>
+                  <h3 className={styles.dailyArticleSubtitle}>
+                    Latest article
+                  </h3>
+
                   <h2 className={styles.dailyArticleTitle}>
                     {articles[0].title}
                   </h2>
-                </a>
-              </Link>
-              <p className={styles.dailyArticleDescription}>
-                <i>{articles[0].description}</i>
-              </p>
-              <p className={styles.dailyArticleContent}>
-                {articles[0].content}
-              </p>
-              <p className={styles.dailyArticleLink}>
-                <Link href={articles[0].url}>
-                  <a>
-                    <u>
-                      <i>Link to article</i>
-                    </u>
-                  </a>
-                </Link>
-              </p>
-            </div>
-          </div>
+
+                  <p className={styles.dailyArticleDescription}>
+                    <i>{articles[0].description}</i>
+                  </p>
+                  <p className={styles.dailyArticleContent}>
+                    {articles[0].content}
+                  </p>
+                  <p className={styles.dailyArticleLink}>
+                    <Link href={articles[0].url}>
+                      <a>
+                        <u>
+                          <i>Link to article</i>
+                        </u>
+                      </a>
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </Link>
           <div className={styles.articleList}>
             {articles.map((article, index) => {
               let dateBefore = article.publishedAt;
