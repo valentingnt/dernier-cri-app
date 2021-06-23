@@ -31,7 +31,7 @@ export const getServerSideProps = async (context) => {
     "language=en&" +
     "from=2021-06-18&" +
     "sortBy=publishedAt&" +
-    "pageSize=4&" +
+    "pageSize=30&" +
     `apiKey=${apiKey}`;
 
   const res = await fetch(url);
