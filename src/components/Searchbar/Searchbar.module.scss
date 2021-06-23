@@ -32,6 +32,15 @@
 
 @media (max-width: 920px) {
   .searchArea {
-    display: none;
+    border-left: none;
+    border-right: none;
+  }
+  .searchBox {
+    width: 70%;
+    border-left: none;
+  }
+  .searchBtn {
+    width: 30%;
+    border-right: none;
   }
 }
