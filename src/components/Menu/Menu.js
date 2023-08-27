@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "./Menu.module.scss";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import styles from "./Menu.module.scss"
 
 const Menu = () => {
-  const router = useRouter();
-  
+  const router = useRouter()
+
   const menuItems = [
     "Fashion",
     "Technology",
@@ -14,7 +14,7 @@ const Menu = () => {
     "Society",
     "Sport",
     "Culture",
-  ];
+  ]
 
   return (
     <>
@@ -30,11 +30,11 @@ const Menu = () => {
                 </div>
               </a>
             </Link>
-          );
+          )
         })}
       </menu>
     </>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu 

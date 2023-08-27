@@ -1,8 +1,8 @@
-import styles from "./Main.module.scss";
-import Header from "../../layout/Header/Header";
-import TriggerMenuButton from "../../components/TriggerMenuButton/TriggerMenuButton";
-import Menu from "../../components/Menu/Menu";
-import Searchbar from "../../components/Searchbar/Searchbar";
+import styles from "./Main.module.scss"
+import Header from "../../layout/Header/Header"
+import TriggerMenuButton from "../../components/TriggerMenuButton/TriggerMenuButton"
+import Menu from "../../components/Menu/Menu"
+import Searchbar from "../../components/Searchbar/Searchbar"
 
 const Main = ({ children }) => {
   return (
@@ -13,7 +13,7 @@ const Main = ({ children }) => {
       <Searchbar />
       {children}
     </main>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main 

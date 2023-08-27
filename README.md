@@ -27,11 +27,11 @@ L'API NewsAPI était une découverte pour moi, elle possède une limite qui peut
 *_"The request didn't send any articles. Double check your research or check the API key validity."_*
 Il suffit alors de vérifier le fichier `.env` à la racine de l'application et de changer la clé par celle-ci : `2e0b8f31bf684707982801288c080e07`
 
-## Installation du projet <dernier-cri-app>
+## Installation du projet <trend-app>
 
-Pour installer <dernier-cri-app> localement, suivez ces étapes:
+Pour installer <trend-app> localement, suivez ces étapes:
 
-1. Cloner le repository appelé <dernier-cri-app>.
+1. Cloner le repository appelé <trend-app>.
 2. `cd` à l'intérieur puis : 
 
 ```

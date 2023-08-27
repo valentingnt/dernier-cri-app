@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./Feed.module.scss";
-import Link from "next/link";
+import styles from "./Feed.module.scss"
+import Link from "next/link"
 
 const Feed = ({ articles, theme }) => {
   if (articles != null && articles.length > 0) {
@@ -50,8 +50,8 @@ const Feed = ({ articles, theme }) => {
           </div>
           <div className={styles.articleList}>
             {articles.map((article, index) => {
-              let dateBefore = article.publishedAt;
-              let date = dateBefore.slice(0, 10);
+              let dateBefore = article.publishedAt
+              let date = dateBefore.slice(0, 10)
               if (index > 0) {
                 return (
                   <div key={index} className={styles.oneArticle}>
@@ -72,13 +72,13 @@ const Feed = ({ articles, theme }) => {
                       </a>
                     </Link>
                   </div>
-                );
+                )
               }
             })}
           </div>
         </div>
       </div>
-    );
+    )
   } else {
     return (
       <div className={styles.noMatch}>
@@ -95,8 +95,8 @@ const Feed = ({ articles, theme }) => {
           </a>
         </Link>
       </div>
-    );
+    )
   }
-};
+}
 
-export default Feed;
+export default Feed 

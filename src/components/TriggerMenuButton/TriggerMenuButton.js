@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "./TriggerMenuButton.module.scss";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import styles from "./TriggerMenuButton.module.scss"
 
 const TriggerMenuButton = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   const menuItems = [
     "Fashion",
@@ -14,7 +14,7 @@ const TriggerMenuButton = () => {
     "Society",
     "Sport",
     "Culture",
-  ];
+  ]
   return (
     <nav role="navigation">
       <div className={styles.menuToggle}>
@@ -35,12 +35,12 @@ const TriggerMenuButton = () => {
                   </div>
                 </a>
               </Link>
-            );
+            )
           })}
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default TriggerMenuButton;
+export default TriggerMenuButton 

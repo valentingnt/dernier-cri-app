@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import styles from "./Article.module.scss";
+import Link from "next/link"
+import styles from "./Article.module.scss"
 
 const Article = ({ article, date }) => {
   return (
@@ -47,6 +47,6 @@ const Article = ({ article, date }) => {
         <h1>Article not found</h1>
       )}
     </main>
-  );
-};
-export default Article;
+  )
+}
+export default Article 

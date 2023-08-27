@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import Menu from "../../components/Menu/Menu";
-import styles from "./Header.module.scss";
+import Link from "next/link"
+import Menu from "../../components/Menu/Menu"
+import styles from "./Header.module.scss"
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
         </Link>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header 
