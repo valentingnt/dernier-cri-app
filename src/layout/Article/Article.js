@@ -20,7 +20,7 @@ const Article = ({ article, date }) => {
 
           <div className={styles.articleContent}>
             <p>{article.content}</p>
-            <Link href={article.url}>
+            <Link href={article.url} legacyBehavior>
               <a>
                 <u>
                   <i>Link to full article</i>
@@ -33,7 +33,7 @@ const Article = ({ article, date }) => {
 
           <p className={styles.publishedAt}>Published at : {date}</p>
 
-          <Link href={"/"}>
+          <Link href={"/"} legacyBehavior>
             <a>
               <p>
                 <i>

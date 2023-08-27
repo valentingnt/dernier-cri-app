@@ -26,7 +26,7 @@ const TriggerMenuButton = () => {
         <ul className={styles.menu}>
           {menuItems.map((item, index) => {
             return (
-              <Link scroll={false} href={`/${item}`} key={index}>
+              <Link scroll={false} href={`/${item}`} key={index} legacyBehavior>
                 <a>
                   <div
                     className={router.query.theme === item ? styles.active : ""}

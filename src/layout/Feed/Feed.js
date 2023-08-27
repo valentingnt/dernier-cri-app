@@ -8,7 +8,7 @@ const Feed = ({ articles, theme }) => {
       <div className={styles.container}>
         <div className={styles.mainGrid}>
           <div className={styles.dailyArticle}>
-            <Link href={`/${theme}/0`}>
+            <Link href={`/${theme}/0`} legacyBehavior>
               <a>
                 <div className={styles.stickyArticle}>
                   <div className={styles.img}>
@@ -36,7 +36,7 @@ const Feed = ({ articles, theme }) => {
                     {articles[0].content}
                   </p>
                   <p className={styles.dailyArticleLink}>
-                    <Link href={articles[0].url}>
+                    <Link href={articles[0].url} legacyBehavior>
                       <a>
                         <u>
                           <i>Link to article</i>
@@ -55,7 +55,7 @@ const Feed = ({ articles, theme }) => {
               if (index > 0) {
                 return (
                   <div key={index} className={styles.oneArticle}>
-                    <Link href={`/${theme}/` + index}>
+                    <Link href={`/${theme}/` + index} legacyBehavior>
                       <a>
                         <img
                           className={styles.articleImage}
@@ -85,7 +85,7 @@ const Feed = ({ articles, theme }) => {
         <h1>The request didn't send any articles.</h1>
         <h2>Double check your research or check the API key validity.</h2>
 
-        <Link href={"/"}>
+        <Link href={"/"} legacyBehavior>
           <a>
             <u>
               <i>

@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import Article from "../../layout/Article/Article"
 import Main from "../../template/Main/Main"
 
-const Details = ({ articles }) => {
+function Details({ articles }) {
   const router = useRouter()
   let idURLstring = router.query.id
   let idURL = parseInt(idURLstring)
@@ -27,18 +27,19 @@ const Details = ({ articles }) => {
   )
 }
 
-export const getServerSideProps = async (context) => {
+export async function getServerSideProps(context) {
   const params = context.params.theme
 
   const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
-  const url =
-    "https://newsapi.org/v2/everything?" +
-    `qInTitle=+${params}&` +
-    "language=en&" +
-    "from=2021-06-18&" +
-    "sortBy=publishedAt&" +
-    `apiKey=${apiKey}`
+  const oneMonthAgo = new Date()
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
+  const year = oneMonthAgo.getFullYear()
+  const month = oneMonthAgo.getMonth() + 1
+  const day = oneMonthAgo.getDate()
+  const date = `${year}-${month}-${day}`
+
+  const url = `https://newsapi.org/v2/everything?qInTitle=+${params}&language=en&from=${date}&sortBy=publishedAt&pageSize=30&apiKey=${apiKey}`
 
   const res = await fetch(url)
   const data = await res.json()
@@ -47,4 +48,5 @@ export const getServerSideProps = async (context) => {
     props: data,
   }
 }
+
 export default Details 
